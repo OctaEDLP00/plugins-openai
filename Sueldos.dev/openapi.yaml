@@ -1,0 +1,230 @@
+openapi: 3.0.1
+info:
+  title: Sueldos.dev Plugin
+  version: 0.0.1
+  description: Obtain the salaries of the developers Spanish-speaking community
+paths:
+  /countryData:
+    get:
+      summary: Get all Country Data
+      operationId: getCountryData
+      tags:
+        - countryData
+      parameters:
+        - in: query
+          name: country
+          required: true
+          description: Query to search the salaries of the developers Spanish-speaking community
+          schema:
+            type: object
+      response:
+        '200':
+          description:
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  content: object
+                  items:
+                    $ref: '#/components/schemas/countryData'
+  /filteredSalary:
+    get:
+      summary: Get all Filtered Salaries
+      operationId: getFilteredSalaries
+      tags:
+        - filteredSalary
+      parameters:
+        - in: query
+          name: country
+          required: true
+          description: Query to search the salaries of the developers Spanish-speaking community
+          schema:
+            type: object
+      response:
+        '200':
+          description: Successfuly response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: object
+                    items:
+                      $ref: '#/components/schemas/filteredSalary'
+
+components:
+  schemas:
+    countryData:
+      type: object
+      properties:
+        averageSalaries:
+          type: object
+          properties:
+            total:
+              type: number
+            gender:
+              type: object
+              properties:
+                man: number
+                woman: number
+                noGender: number
+            modality:
+              type: object
+              properties:
+                remote:
+                  type: number
+                office:
+                  type: number
+                hybrid:
+                  type: number
+                mostlyRemote:
+                  type: number
+            experience:
+              type: object
+              properties:
+                trainee: number
+                junior: number
+                senior: number
+            studies:
+              type: object
+              properties:
+                bootcamp: number,
+                formal: number,
+                self: number,
+            modalityAndExperience:
+              type: object
+              properties:
+                trainee:
+                  type: object
+                  properties:
+                    remote: number
+                    office: number
+                    hybrid: number
+                    mostlyRemote: number
+                junior:
+                  type: object
+                  properties:
+                    remote: number
+                    office: number
+                    hybrid: number
+                    mostlyRemote: number
+                senior:
+                  type: object
+                  properties:
+                    remote: number
+                    office: number
+                    hybrid: number
+                    mostlyRemote: number
+            genderAndExperience:
+              type: object
+              properties:
+                trainee:
+                  type: object
+                  properties:
+                    remote: number
+                    office: number
+                    hybrid: number
+                    mostlyRemote: number
+                junior:
+                  type: object
+                  properties:
+                    remote: number
+                    office: number
+                    hybrid: number
+                    mostlyRemote: number
+                senior:
+                  type: object
+                  properties:
+                    remote: number
+                    office: number
+                    hybrid: number
+                    mostlyRemote: number
+        count:
+          type: object
+          properties:
+            total: number
+            gender:
+              type: object
+              properties:
+                man: number
+                woman: number
+                noGender: number
+            modality:
+              type: object
+              properties:
+                remote: number
+                office: number
+                hybrid: number
+                mostlyRemote: number
+            experience:
+              type: object
+              properties:
+                trainee: number
+                junior: number
+                senior: number
+            studies:
+              type: object
+              properties:
+                bootcamp: number
+                formal: number
+                self: number
+            modalityAndExperience:
+              type: object
+              properties:
+                trainee:
+                  type: object
+                  properties:
+                    remote: number
+                    office: number
+                    hybrid: number
+                    mostlyRemote: number
+                junior:
+                  type: object
+                  properties:
+                    remote: number
+                    office: number
+                    hybrid: number
+                    mostlyRemote: number
+                senior:
+                  type: object
+                  properties:
+                    remote: number
+                    office: number
+                    hybrid: number
+                    mostlyRemote: number
+            genderAndExperience:
+              type: object
+              properties:
+                trainee:
+                  type: object
+                  properties:
+                    man: number
+                    woman: number
+                    noGender: number
+                junior:
+                  type: object
+                  properties:
+                    man: number
+                    woman: number
+                    noGender: number
+                senior:
+                  type: object
+                  properties:
+                    man: number
+                    woman: number
+                    noGender: number
+      require:
+        - averageSalaries
+        - count
+    filteredSalary:
+      type: object
+      properties:
+        count: number
+        salary: number
+        happines: number
+      require:
+        - count
+        - salary
+        - happines

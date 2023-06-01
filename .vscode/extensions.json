@@ -1,0 +1,20 @@
+{
+  "recommendations": [
+    "standard.vscode-standard",
+    "ultram4rine.vscode-choosealicense",
+    "aaron-bond.better-comments",
+    "wraith13.bracket-lens",
+    "usernamehw.errorlens",
+    "oliversturm.fix-json",
+    "wix.vscode-import-cost",
+    "ms-vscode.vscode-typescript-next",
+    "xabikos.javascriptsnippets",
+    "christian-kohler.npm-intellisense",
+    "christian-kohler.path-intellisense",
+    "pflannery.vscode-versionlens",
+    "yoavbls.pretty-ts-errors",
+    "rapidapi.vscode-rapidapi-client",
+    "rapidapi.vscode-services",
+    "redhat.vscode-yaml"
+  ]
+}

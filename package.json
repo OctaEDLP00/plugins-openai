@@ -1,0 +1,24 @@
+{
+  "name": "plugins_chat-gpt",
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "start:sd": "cd ./Sueldos.dev/src && node --trace-warnings --watch index.js",
+    "start:ml": "cd ./Mercado_Libre/src && node --trace-warnings --watch index.js"
+  },
+  "dependencies": {
+    "cors": "2.8.5",
+    "express": "4.18.2"
+  },
+  "devDependencies": {
+    "standard": "17.1.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "./node_modules/standard/eslintrc.json"
+    ]
+  },
+  "config": {
+    "node": "19"
+  }
+}
