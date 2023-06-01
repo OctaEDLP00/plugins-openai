@@ -91,10 +91,12 @@
   <h2 id="references">🔗References</h1>
   <div>
 
-  - [Openai Plugins DOCS]()
+  - [Openai Plugins DOCS](https.//platform.openai.com/docs/introduction/key-concepts)
+  <!--
   - []()
   - []()
   - []()
+  -->
 
   </div>
 </div>
